@@ -59,4 +59,13 @@ describe('B2Vec2 operations', () => {
     expect(vec1.x).to.equal(x + vec2.x);
     expect(vec1.y).to.equal(y + vec2.y);
   });
+
+  it('should be set to the answer after a .subtract() call', () => {
+    const vec1 = createRandomVector();
+    const { x, y } = vec1;
+    const vec2 = createRandomVector();
+    vec1.subtract(vec2);
+    expect(vec1.x).to.equal(x - vec2.x);
+    expect(vec1.y).to.equal(y - vec2.y);
+  });
 });
