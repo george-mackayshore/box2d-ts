@@ -28,4 +28,13 @@ export default class B2Vec2 {
   public negate(): B2Vec2 {
     return new B2Vec2(-this.x, -this.y);
   }
+
+  /**
+   * Add another vector to this vector, storing the answer in this vector.
+   * @param vec the vector to add
+   */
+  public add(vec: B2Vec2): void {
+    this.x += vec.x;
+    this.y += vec.y;
+  }
 }
