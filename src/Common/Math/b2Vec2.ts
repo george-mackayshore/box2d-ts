@@ -12,4 +12,10 @@ export default class B2Vec2 {
   public setZero(): void {
     this.x = this.y = 0;
   }
+
+  /** Set this vector to the given coordinates */
+  public set(x: number, y: number): void {
+    this.x = x;
+    this.y = y;
+  }
 }
