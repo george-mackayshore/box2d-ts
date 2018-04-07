@@ -50,4 +50,13 @@ describe('B2Vec2 operations', () => {
     expect(neg.x).to.equal(-x);
     expect(neg.y).to.equal(-y);
   });
+
+  it('should be set to the answer after a .add() call', () => {
+    const vec1 = createRandomVector();
+    const { x, y } = vec1;
+    const vec2 = createRandomVector();
+    vec1.add(vec2);
+    expect(vec1.x).to.equal(x + vec2.x);
+    expect(vec1.y).to.equal(y + vec2.y);
+  });
 });
