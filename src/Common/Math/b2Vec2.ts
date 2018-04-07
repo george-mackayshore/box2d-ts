@@ -37,4 +37,13 @@ export default class B2Vec2 {
     this.x += vec.x;
     this.y += vec.y;
   }
+
+  /**
+   * Subtract another vector from this vector.
+   * @param vec the vector to subtract
+   */
+  public subtract(vec: B2Vec2): void {
+    this.x -= vec.x;
+    this.y -= vec.y;
+  }
 }
