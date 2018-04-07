@@ -27,4 +27,13 @@ describe('B2Vec2', () => {
     expect(vec.x).to.equal(0);
     expect(vec.y).to.equal(0);
   });
+
+  it('have its x and y set after .set(x, y) call', () => {
+    const x = Math.random();
+    const y = Math.random();
+    const vec = new b2Vec2();
+    vec.set(x, y);
+    expect(vec.x).to.equal(x);
+    expect(vec.y).to.equal(y);
+  });
 });
