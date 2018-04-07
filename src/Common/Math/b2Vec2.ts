@@ -3,6 +3,11 @@ export default class B2Vec2 {
   public x: number;
   public y: number;
 
+  /**
+   * Create a new column vector
+   * @param x the x coordinate
+   * @param y the y coordinate
+   */
   public constructor(x: number = 0, y: number = 0) {
     this.x = x;
     this.y = y;
