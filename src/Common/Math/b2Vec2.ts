@@ -7,4 +7,9 @@ export default class B2Vec2 {
     this.x = x;
     this.y = y;
   }
+
+  /** Set this vector to 0 */
+  public setZero(): void {
+    this.x = this.y = 0;
+  }
 }
