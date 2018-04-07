@@ -18,4 +18,9 @@ export default class B2Vec2 {
     this.x = x;
     this.y = y;
   }
+
+  /** Negate this vector */
+  public negate(): B2Vec2 {
+    return new B2Vec2(-this.x, -this.y);
+  }
 }
