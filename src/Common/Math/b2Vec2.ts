@@ -5,11 +5,14 @@ export default class B2Vec2 {
   /** The y coordinate */
   public y: number;
 
-  /**
-   * The squared length of this vector.
-   */
+  /** The squared length of this vector */
   public get lengthSquared(): number {
     return this.x * this.x + this.y * this.y;
+  }
+
+  /** The length of this vector */
+  public get length(): number {
+    return Math.sqrt(this.lengthSquared);
   }
 
   /**
