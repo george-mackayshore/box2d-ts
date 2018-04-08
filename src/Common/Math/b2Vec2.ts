@@ -1,7 +1,16 @@
 /** A 2D column vector */
 export default class B2Vec2 {
+  /** The x coordinate */
   public x: number;
+  /** The y coordinate */
   public y: number;
+
+  /**
+   * The squared length of this vector.
+   */
+  public get lengthSquared(): number {
+    return this.x * this.x + this.y * this.y;
+  }
 
   /**
    * Create a new column vector
