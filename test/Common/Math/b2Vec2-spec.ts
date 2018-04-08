@@ -9,9 +9,12 @@ type VectorData = {
   y: number;
 };
 
+const randomRange: (m: number, x: number) => number = (m: number, x: number) =>
+  m + Math.random() * (x - m);
+
 const createRandomVector: () => VectorData = () => {
-  const x = Math.random() * 1024;
-  const y = Math.random() * 1024;
+  const x = randomRange(-1024, 1024);
+  const y = randomRange(-1024, 1024);
   const vec = new b2Vec2(x, y);
   return { vec, x, y };
 };
@@ -79,8 +82,13 @@ describe('B2Vec2 operations', () => {
     expect(vec.y).to.equal(y * scalar);
   });
 
-  it('should return the squared length after a .lengthSquared() call', () => {
+  it('should have a squared length', () => {
     const { vec, x, y } = createRandomVector();
     expect(vec.lengthSquared).to.equal(x * x + y * y);
+  });
+
+  it('should have a non-negative length', () => {
+    const { vec, x, y } = createRandomVector();
+    expect(vec.length).to.not.be.lessThan(0);
   });
 });
