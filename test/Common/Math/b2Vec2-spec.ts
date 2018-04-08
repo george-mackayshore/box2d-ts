@@ -10,8 +10,8 @@ type VectorData = {
 };
 
 const createRandomVector: () => VectorData = () => {
-  const x = Math.random();
-  const y = Math.random();
+  const x = Math.random() * 1024;
+  const y = Math.random() * 1024;
   const vec = new b2Vec2(x, y);
   return { vec, x, y };
 };
@@ -77,5 +77,10 @@ describe('B2Vec2 operations', () => {
     vec.multiply(scalar);
     expect(vec.x).to.equal(x * scalar);
     expect(vec.y).to.equal(y * scalar);
+  });
+
+  it('should return the squared length after a .lengthSquared() call', () => {
+    const { vec, x, y } = createRandomVector();
+    expect(vec.lengthSquared).to.equal(x * x + y * y);
   });
 });
