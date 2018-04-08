@@ -46,4 +46,13 @@ export default class B2Vec2 {
     this.x -= vec.x;
     this.y -= vec.y;
   }
+
+  /**
+   * Multiply the vector by a scalar value
+   * @param scalar the scalar value to multiply
+   */
+  public multiply(scalar: number): void {
+    this.x *= scalar;
+    this.y *= scalar;
+  }
 }
